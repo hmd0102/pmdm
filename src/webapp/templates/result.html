@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prediction Result</title>
+</head>
+<body>
+  <h1>File: {{ filename }}</h1>
+  <p>Prediction: {{ prediction }}</p>
+  {% if probability %}
+    <p>Probability (Benign / Malicious): {{ probability[0] }} / {{ probability[1] }}</p>
+  {% endif %}
+  <a href="{{ url_for('upload_file') }}">Upload PDF khác</a>
+</body>
+</html>
