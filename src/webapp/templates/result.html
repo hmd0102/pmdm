@@ -55,9 +55,9 @@
 <body>
 
 <div class="card text-center">
-  <h4 class="mb-3">📄 Kết quả phân tích</h4>
+  <h4 class="mb-3 text-white">📄 Kết quả phân tích</h4>
 
-  <p><strong>File:</strong> {{ filename }}</p>
+  <p class="text-white"><strong>File:</strong> {{ filename }}</p>
 
   <!-- Prediction -->
   <h5 class="
@@ -78,7 +78,7 @@
   {% if probability %}
     <div class="mt-3">
 
-      <p class="mb-1">Benign</p>
+      <p class="mb-1 text-white">Benign</p>
       <div class="progress mb-2">
         <div class="progress-bar bg-success"
              style="width: {{ probability[0]*100 }}%">
@@ -86,7 +86,7 @@
         </div>
       </div>
 
-      <p class="mb-1">Malicious</p>
+      <p class="mb-1 text-white">Malicious</p>
       <div class="progress">
         <div class="progress-bar bg-danger"
              style="width: {{ probability[1]*100 }}%">
