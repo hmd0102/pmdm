@@ -1,4 +1,5 @@
 import os
+import sys
 import pandas as pd
 from pdfid import pdfid
 import io
@@ -95,3 +96,6 @@ def extract_features(file, name=None):
 
     df = pd.DataFrame([features])[feature_columns]
     return df
+
+if __name__ == "__main__":
+    print(extract_features(sys.argv[1]))
