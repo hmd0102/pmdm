@@ -13,9 +13,9 @@ def _parse_args():
     parser = argparse.ArgumentParser(description="Train/evaluate pipeline")
     parser.add_argument(
         "--mode",
-        choices=["eda", "train", "evaluate", "all"],
+        choices=["eda", "train", "evaluate", "all", "app"],
         default="all",
-        help="Pipeline mode: eda, train, evaluate, or all",
+        help="Pipeline mode: eda, train, evaluate, all, or app",
     )
     parser.add_argument("--data", default="data/dataset.csv", help="Path to dataset CSV")
     parser.add_argument("--model-path", default="model.joblib", help="Path to save/load the model")
@@ -73,6 +73,10 @@ def main():
             save_plots=True,
             plot_prefix="evaluation",
         )
+
+    if args.mode == "app":
+        from src.webapp.app import app
+        app.run(debug=True)
 
 
 if __name__ == "__main__":
